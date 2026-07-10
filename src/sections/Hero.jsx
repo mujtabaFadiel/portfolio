@@ -71,7 +71,7 @@ export const Hero = () => {
                             <ThemedBtn size='lg'>
                                 Contact Me <ArrowRight className='w-5 h-5' />
                             </ThemedBtn>
-                            <a href="https://drive.google.com/file/d/1hEG78nSMqTNNEol9wqDCMwcEIYgRFlvy/view?usp=sharing">
+                            <a href="https://drive.google.com/file/d/1zqojse6A66EBsxOE0aBD0vVM8OuR8ioG/view?usp=sharing">
                                 <AnimatedBorderBtn>
                                     <Download className="w-5 h-5" />
                                     <span className="">

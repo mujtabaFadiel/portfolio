@@ -4,6 +4,21 @@ import { AnimatedBorderBtn } from "../component/AnimatedBorderBtn"
 
 const projects = [
     {
+        title: "AI-Powered WhatsApp Assistant for Photography Studios",
+        isMobile: false,
+        description: `
+        Developed a complete fullstack system consisting of a NestJS REST API and 
+        a React admin dashboard. The system features an intelligent WhatsApp bot that 
+        understands natural language, remembers conversation context, and automatically 
+        creates bookings when customer data is complete.
+        `,
+        image: '/projects/dashboardLens.png',
+        tags: ["NestJS" , "PostgreSQL", "TypeORM", "Groq AI", "Twilio WhatsApp API",
+            "React", "TypeScript"],
+        link: '#',
+        github: 'https://github.com/mujtabaFadiel/lens-bot-backend'
+    },
+    {
         title: "E-Commerce Fullstack App",
         isMobile: true,
         description: `
