@@ -31,7 +31,7 @@ const projects = [
         creates bookings when customer data is complete.
         `,
         image: '/projects/dashboardLens.png',
-        tags: ["NestJS" , "PostgreSQL", "TypeORM", "Groq AI", "Twilio WhatsApp API",
+        tags: ["NestJS", "PostgreSQL", "TypeORM", "Groq AI", "Twilio WhatsApp API",
             "React", "TypeScript"],
         link: '#',
         github: 'https://github.com/mujtabaFadiel/lens-bot-backend'
@@ -96,7 +96,7 @@ const projects = [
         link: '#',
         github: 'https://github.com/mujtabaFadiel/chat-app-backend'
     },
-    
+
     {
         title: "Landing page",
         isMobile: false,
@@ -155,88 +155,89 @@ export const Projects = () => {
 
                 {/*Project grid*/}
                 <div className="grid md:grid-cols-2 gap-8">
-                    {projects.map((project, id) => (
-                        <div
-                            key={id}
-                            className="group glass rounded-2xl 
-                            overflow-hidden animate-fade-in md:row-span-1"
-                            style={{ animationDelay: `${(id + 1) * 100}ms` }}
-                        >
-                            {/*Image*/}
-                            <div className={`relative flex   ${project.isMobile ? 'aspect-[9/16] max-h-[400px]'
-                                : 'aspect-video'
-                                }`}>
-                                {project.images ? (
-                                    project.images.map((img, i) => (
-                                      
+                    {projects.map((project, id) => {
+                        
+                        const ComponentTag = project.isMobile ? 'a' : 'div';
+
+                        return (
+                            <ComponentTag
+                                key={id}
+                                href={project.isMobile ? project.github : undefined}
+                                target={project.isMobile ? "_blank" : undefined}
+                                rel={project.isMobile ? "noopener noreferrer" : undefined}
+                                className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1 block"
+                                style={{ animationDelay: `${(id + 1) * 100}ms` }}
+                            >
+                                {/* Image */}
+                                <div className={`relative flex ${project.isMobile ? 'aspect-[9/16] max-h-[400px]' : 'aspect-video'
+                                    }`}>
+                                    {project.images ? (
+                                        project.images.map((img, i) => (
                                             <img
-                                            key={i}
-                                            src={img}
-                                            alt={`image`}
-                                            className="
-                                                h-full w-auto rounded-xl 
-                                                object-cover flex-1 
-                                                transition-transform duration-700 
-                                                group-hover:scale-105
-                                            "
+                                                key={i}
+                                                src={img}
+                                                alt="project visual"
+                                                className="h-full w-auto rounded-xl object-cover flex-1 transition-transform duration-700 group-hover:scale-105"
+                                            />
+                                        ))
+                                    ) : (
+                                        <img
+                                            src={project.image}
+                                            alt={project.title}
+                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                         />
-                                    ))
-                                ) : (
-                                    <img
-                                        src={project.image}
-                                        alt={project.title}
-                                        className="w-full h-full object-cover 
-                                        transition-transform duration-700 group-hover:scale-110"
-                                    />
-                                )}
-                                <div className="absolute inset-0
-                                    bg-gradient-to-t from-card via-card/50
-                                    to-transparent opacity-60
-                                ">
-                                    {/*Overlay links*/}
-                                    <div className="absolute inset-0 flex items-center 
-                                    justify-center gap-6 opacity-0 group-hover:opacity-100 
-                                    transition-transform duration-300">
-                                        <a href={project.link}
-                                            className="rounded-full glass p-3 hover:bg-primary
-                                            hover:text-primary-foreground transition-all"
-                                        >
-                                            <ArrowUpRight className="w-5 h-5" />
-                                        </a>
-                                        <a href={project.github}
-                                            className="rounded-full glass p-3 hover:bg-primary
-                                            hover:text-primary-foreground transition-all"
-                                        >
-                                            <FaGithub className="w-5 h-5" />
-                                        </a>
+                                    )}
+
+                                    <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60">
+                                        {/* Overlay links - 2️⃣ تظهر فقط للويب لتجنب تعشيش الروابط في الموبايل */}
+                                        {!project.isMobile && (
+                                            <div className="absolute inset-0 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-transform duration-300">
+                                                <a
+                                                    href={project.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="rounded-full glass p-3 hover:bg-primary hover:text-primary-foreground transition-all"
+                                                >
+                                                    <ArrowUpRight className="w-5 h-5" />
+                                                </a>
+                                                <a
+                                                    href={project.github}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="rounded-full glass p-3 hover:bg-primary hover:text-primary-foreground transition-all"
+                                                >
+                                                    <FaGithub className="w-5 h-5" />
+                                                </a>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
-                            </div>
-                            {/*Content*/}
-                            <div className="p-6 space-y-4">
-                                <div className="flex items-start justify-between">
-                                    <h3 className="text-xl font-semibold 
-                                        group-hover:text-primary transition-colors">{project.title}</h3>
-                                    <ArrowUpRight
-                                        className="w-5 h-5 text-muted-foreground
-                                            group-hover:text-primary
-                                            group-hover:translate-x-1  
-                                            group-hover:translate-y-1 transition-all"
-                                    />
+
+                                {/* Content */}
+                                <div className="p-6 space-y-4">
+                                    <div className="flex items-start justify-between">
+                                        <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
+                                            {project.title}
+                                        </h3>
+                                        <ArrowUpRight
+                                            className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:translate-y-1 transition-all"
+                                        />
+                                    </div>
+                                    <p className="text-muted-foreground text-sm">{project.description}</p>
+                                    <div className="flex flex-wrap gap-2">
+                                        {project.tags.map((tag, index) => (
+                                            <span
+                                                key={index}
+                                                className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300"
+                                            >
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
                                 </div>
-                                <p className="text-muted-foreground text-sm">{project.description}</p>
-                                <div className="flex flex-wrap gap-2">{project.tags.map((tag, index) => (
-                                    <span key={index}
-                                        className="px-4 py-1.5 rounded-full bg-surface
-                                            text-xs font-medium border border-border/50
-                                            text-muted-foreground hover:border-primary/50
-                                            hover:text-primary transition-all duration-300"
-                                    >{tag}</span>
-                                ))}
-                                </div>
-                            </div>
-                        </div>
-                    ))}
+                            </ComponentTag>
+                        );
+                    })}
                 </div>
 
                 {/**/}
