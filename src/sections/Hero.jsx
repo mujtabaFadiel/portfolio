@@ -68,7 +68,7 @@ export const Hero = () => {
                             </p>
                         </div>
                         <div className='flex gap-2'>
-                            <ThemedBtn size='lg'>
+                            <ThemedBtn size='default'>
                                 Contact Me <ArrowRight className='w-5 h-5' />
                             </ThemedBtn>
                             <a href="https://drive.google.com/file/d/1zqojse6A66EBsxOE0aBD0vVM8OuR8ioG/view?usp=sharing">

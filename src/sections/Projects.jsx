@@ -4,6 +4,24 @@ import { AnimatedBorderBtn } from "../component/AnimatedBorderBtn"
 
 const projects = [
     {
+        title: "AI Workspace – AI-Powered Meeting Assistant (React Native, NestJS)",
+        isMobile: true,
+        description: `
+        Built a complete e-commerce platform with a NestJS REST API 
+        and React Native mobile app. The system supports product 
+        browsing with search and category filtering, cart management, 
+        order processing, and mock payment integration.
+        `,
+        images: [
+            '/projects/AiWork1.jpg',
+            '/projects/AiWork2.jpg',
+            '/projects/AiWork3.jpg',
+        ],
+        tags: ["NestJS", "PostgreSQL", "JWT", "React Native", "TypeScript"],
+        link: '#',
+        github: 'https://github.com/mujtabaFadiel/Ai-workspace-backend'
+    },
+    {
         title: "AI-Powered WhatsApp Assistant for Photography Studios",
         isMobile: false,
         description: `
